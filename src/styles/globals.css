@@ -1,0 +1,26 @@
+:root {
+  --text: #111;
+  --bg: #eee;
+  --primary: #222;
+  --red: #e02b2b;
+  --blue: #216fed;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #eee;
+    --bg: #111;
+    --primary: #ccc;
+    --red: #e02b2b;
+    --blue: #216fed;
+  }
+}
+
+html, body {
+  margin: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
