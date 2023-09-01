@@ -13,7 +13,7 @@ function getContent (value) {
   }
 }
 
-export default function TicTacToeCell ({ value, index, updateBoard }) {
+export default function TicTacToeCell ({ value, index, updateBoard = () => {} }) {
   const handleClick = () => {
     updateBoard(index)
   }
