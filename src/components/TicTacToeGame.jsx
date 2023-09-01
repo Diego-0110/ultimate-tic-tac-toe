@@ -44,7 +44,7 @@ export default function TicTacToeGame () {
           {winner === PIECES.x
             ? <Cross width='1.5em' color='#e02b2b'/>
             : <Circle width='1.5em' color='#216fed'/>}
-          WINS!
+          &nbsp;WINS!
         </h2>
       : <h2>DRAW!</h2>
   )
@@ -69,14 +69,7 @@ export default function TicTacToeGame () {
       <TicTacToeBoard board={board} updateBoard={updateBoard}></TicTacToeBoard>
       {winner !== null &&
         <Modal aditionalButton={<Button onClick={resetBoard}>New Game</Button>}>
-          {winner !== WINNERS.draw
-            ? <h2 className={styles.gameMsg}>
-                {winner === PIECES.x
-                  ? <Cross width='1.5em' color='#e02b2b'/>
-                  : <Circle width='1.5em' color='#216fed'/>}
-                WINS!
-              </h2>
-            : <h2>DRAW!</h2>}
+          {winnerMsg}
         </Modal>}
     </section>
   )

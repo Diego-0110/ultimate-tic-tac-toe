@@ -23,4 +23,9 @@ html, body {
 body {
   background-color: var(--bg);
   color: var(--text);
+  font-family: "Heebo Variable", sans-serif;
+}
+
+:focus-visible {
+  outline: none;
 }

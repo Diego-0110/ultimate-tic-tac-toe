@@ -15,7 +15,7 @@ export default function UltimateTicTacToeBoard ({
                 updateBoard(index, cellIndex)
               }} />
             {(winners[index] || (turnBoard !== null && turnBoard !== index)) &&
-              <div className={styles.turnBoard}>
+              <div className={styles.cellHighlight}>
                 <TicTacToeCell value={winners[index]} />
               </div>}
           </div>
