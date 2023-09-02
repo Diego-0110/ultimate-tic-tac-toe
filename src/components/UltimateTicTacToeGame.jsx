@@ -1,11 +1,8 @@
 import { useState } from 'react'
 import { PIECES, WINNERS } from '@/constants/ticTacToeConstants.js'
 import { checkWinner, checkGameIsFinished } from '@/logic/ticTacToe'
-import { Cross, Circle } from './icons'
 import UltimateTicTacToeBoard from './UltimateTicTacToeBoard'
-import Button from './Button'
-import Modal from './Modal'
-import styles from '@/styles/UltimateTicTacToeGame.module.css'
+import TicTacToeGame from './TicTacToeGame'
 
 export default function UltimateTicTacToeGame () {
   const [ultimateBoard, setUltimateBoard] = useState(Array(9).fill(Array(9).fill(null)))
@@ -54,40 +51,10 @@ export default function UltimateTicTacToeGame () {
     }
   }
 
-  const winnerMsg = (
-    winner !== WINNERS.draw
-      ? <h2 className={styles.gameMsg}>
-          {winner === PIECES.x
-            ? <Cross width='1.5em' color='#e02b2b'/>
-            : <Circle width='1.5em' color='#216fed'/>}
-          &nbsp;WINS!
-        </h2>
-      : <h2>DRAW!</h2>
-  )
-
-  const turnMsg = (
-    <h2 className={styles.gameMsg}>
-      {turn === PIECES.x
-        ? <Cross width='1.5em' color='#e02b2b'/>
-        : <Circle width='1.5em' color='#216fed'/>}
-      &apos;s TURN
-    </h2>
-  )
-
   return (
-    <section className={styles.game}>
-      <header className={styles.gamePanel}>
-        {winner
-          ? winnerMsg
-          : turnMsg}
-        <Button onClick={resetBoard}>New Game</Button>
-      </header>
+    <TicTacToeGame turn={turn} winner={winner} reset={resetBoard}>
       <UltimateTicTacToeBoard ultimateBoard={ultimateBoard}
         turnBoard={turnBoard} winners={winners} updateBoard={updateBoard} />
-      {winner !== null &&
-        <Modal aditionalButton={<Button onClick={resetBoard}>New Game</Button>}>
-          {winnerMsg}
-        </Modal>}
-    </section>
+    </TicTacToeGame>
   )
 }

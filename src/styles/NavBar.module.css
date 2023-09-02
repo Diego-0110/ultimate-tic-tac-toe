@@ -1,0 +1,9 @@
+.navBar {
+  padding: 16px;
+  border-bottom: 2px solid var(--primary);
+}
+
+.mainTitle {
+  margin: 0;
+  font-family: 'Josefin Sans Variable', sans-serif;
+}

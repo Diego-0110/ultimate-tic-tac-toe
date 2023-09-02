@@ -1,11 +1,10 @@
-import TicTacToeGame from './components/TicTacToeGame'
+import NavBar from './components/NavBar'
 import UltimateTicTacToeGame from './components/UltimateTicTacToeGame'
-import styles from '@/styles/App.module.css'
 
 function App () {
   return (
     <>
-      <h1 className={styles.mainTitle}>Ultimate Tic-Tac-Toe</h1>
+      <NavBar />
       <UltimateTicTacToeGame />
     </>
   )
